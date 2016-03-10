@@ -1,0 +1,355 @@
+snippet aws_auto_scaling_group
+	aws_auto_scaling_group '${1:identifier or command}' do
+		name '${2:name}'
+		options '${3:options}'
+		availability_zones '${4:availability_zones}'
+		desired_capacity '${5:desired_capacity}'
+		launch_configuration '${6:launch_configuration}'
+		min_size '${7:min_size}'
+		max_size '${8:max_size}'
+		load_balancers '${9:load_balancers}' 
+	end
+
+
+snippet aws_cache_cluster
+	aws_cache_cluster '${1:identifier or command}' do
+		cluster_name '${2:cluster_name}'
+		az_mode '${3:az_mode}'
+		preferred_availability_zone '${4:preferred_availability_zone}'
+		preferred_availability_zones '${5:preferred_availability_zones}'
+		number_nodes '${6:number_nodes}'
+		node_type '${7:node_type}'
+		engine '${8:engine}'
+		engine_version '${9:engine_version}'
+		subnet_group_name '${10:subnet_group_name}'
+		security_groups '${11:security_groups}'
+	end
+
+
+snippet aws_cache_replication_group
+	aws_cache_replication_group '${1:identifier or command}' do
+		group_name '${2:group_name}'
+		description '${3:description}'
+		automatic_failover '${4:automatic_failover}'
+		number_cache_clusters '${5:number_cache_clusters}'
+		node_type '${6:node_type}'
+		engine '${7:engine}'
+		engine_version '${8:engine_version}'
+		subnet_group_name '${9:subnet_group_name}'
+		security_groups '${10:security_groups}'
+		preferred_availability_zones '${11:preferred_availability_zones}'
+	end
+
+
+snippet aws_cache_subnet_group
+	aws_cache_subnet_group '${1:identifier or command}' do
+		group_name '${2:group_name}'
+		description '${3:description}'
+		subnets '${4:subnets}'
+	end
+
+
+snippet aws_cloudsearch_domain
+	aws_cloudsearch_domain '${1:identifier or command}' do
+		name '${2:name}'
+		cloudsearch_api_version '${3:cloudsearch_api_version}'
+		multi_az '${4:multi_az}'
+		instance_type '${5:instance_type}'
+		partition_count '${6:partition_count}'
+		replication_count '${7:replication_count}'
+		access_policies '${8:access_policies}'
+		index_fields '${9:index_fields}'
+	end
+
+
+snippet aws_dhcp_options
+	aws_dhcp_options '${1:identifier or command}' do
+		name '${2:name}'
+		domain_name '${3:domain_name}'
+		domain_name_servers '${4:domain_name_servers}'
+		ntp_servers '${5:ntp_servers}'
+		netbios_name_servers '${6:netbios_name_servers}'
+		netbios_node_type '${7:netbios_node_type}'
+		dhcp_options_id '${8:dhcp_options_id}'
+	end
+
+
+snippet aws_ebs_volume
+	aws_ebs_volume '${1:identifier or command}' do
+		name '${2:name}'
+		machine '${3:machine}'
+		availability_zone '${4:availability_zone}'
+		size '${5:size}'
+		snapshot '${6:snapshot}'
+		iops '${7:iops}'
+		volume_type '${8:volume_type}'
+		encrypted '${9:encrypted}'
+		device '${10:device}'
+		volume_id '${11:volume_id}'
+	end
+
+
+snippet aws_eip_address
+	aws_eip_address '${1:identifier or command}' do
+		name '${2:name}'
+		machine '${3:machine}'
+		associate_to_vpc '${4:associate_to_vpc}'
+		public_ip '${5:public_ip}'
+	end
+
+
+snippet aws_elasticsearch_domain
+	aws_elasticsearch_domain '${1:identifier or command}' do
+		domain_name '${2:domain_name}'
+		instance_type '${3:instance_type}'
+		instance_count '${4:instance_count}'
+		dedicated_master_enabled '${5:dedicated_master_enabled}'
+		dedicated_master_type '${6:dedicated_master_type}'
+		dedicated_master_count '${7:dedicated_master_count}'
+		zone_awareness_enabled '${8:zone_awareness_enabled}'
+		ebs_enabled '${9:ebs_enabled}'
+		volume_type '${10:volume_type}'
+		volume_size '${11:volume_size}'
+		iops '${12:iops}'
+		automated_snapshot_start_hour '${13:automated_snapshot_start_hour}'
+		access_policies '${14:access_policies}'
+	end
+
+
+snippet aws_iam_instance_profile
+	aws_iam_instance_profile '${1:identifier or command}' do
+		name '${2:name}'
+		path '${3:path}'
+		role '${4:role}'
+	end
+
+
+snippet aws_iam_role
+	aws_iam_role '${1:identifier or command}' do
+		name '${2:name}'
+		path '${3:path}'
+		assume_role_policy_document '${4:assume_role_policy_document}'
+		inline_policies '${5:inline_policies}'
+	end
+
+
+snippet aws_image
+	aws_image '${1:identifier or command}' do
+		name '${2:name}'
+		image_id '${3:image_id}'
+	end
+
+
+snippet aws_instance
+	aws_instance '${1:identifier or command}' do
+		name '${2:name}'
+		instance_id '${3:instance_id}'
+	end
+
+
+snippet aws_internet_gateway
+	aws_internet_gateway '${1:identifier or command}' do
+		name '${2:name}'
+		vpc '${3:vpc}'
+		internet_gateway_id '${4:internet_gateway_id}'
+	end
+
+
+snippet aws_key_pair
+	aws_key_pair '${1:identifier or command}' do
+		private_key_path '${2:private_key_path}'
+		public_key_path '${3:public_key_path}'
+		private_key_options '${4:private_key_options}'
+		allow_overwrite '${5:allow_overwrite}'
+	end
+
+
+snippet aws_launch_configuration
+	aws_launch_configuration '${1:identifier or command}' do
+		name '${2:name}'
+		image '${3:image}'
+		instance_type '${4:instance_type}'
+		options '${5:options}'
+	end
+
+
+snippet aws_load_balancer
+	aws_load_balancer '${1:identifier or command}' do
+		name '${2:name}'
+		load_balancer_id '${3:load_balancer_id}'
+	end
+
+
+snippet aws_network_acl
+	aws_network_acl '${1:identifier or command}' do
+		name '${2:name}'
+		vpc '${3:vpc}'
+		inbound_rules '${4:inbound_rules}'
+		outbound_rules '${5:outbound_rules}'
+		network_acl_id '${6:network_acl_id}'
+	end
+
+
+snippet aws_network_interface
+	aws_network_interface '${1:identifier or command}' do
+		name '${2:name}'
+		network_interface_id '${3:network_interface_id}'
+		subnet '${4:subnet}'
+		private_ip_address '${5:private_ip_address}'
+		description '${6:description}'
+		security_groups '${7:security_groups}'
+		machine '${8:machine}'
+		device_index '${9:device_index}'
+	end
+
+
+snippet aws_rds_instance
+	aws_rds_instance '${1:identifier or command}' do
+		db_instance_identifier '${2:db_instance_identifier}'
+		engine '${3:engine}'
+		engine_version '${4:engine_version}'
+		db_instance_class '${5:db_instance_class}'
+		multi_az '${6:multi_az}'
+		allocated_storage '${7:allocated_storage}'
+		iops '${8:iops}'
+		publicly_accessible '${9:publicly_accessible}'
+		master_username '${10:master_username}'
+		master_user_password '${11:master_user_password}'
+		db_name '${12:db_name}'
+		port '${13:port}'
+		db_subnet_group_name '${14:db_subnet_group_name}'
+		db_parameter_group_name '${15:db_parameter_group_name}'
+		additional_options '${16:additional_options}'
+	end
+
+
+snippet aws_rds_parameter_group
+	aws_rds_parameter_group '${1:identifier or command}' do
+		name '${2:name}'
+		db_parameter_group_family '${3:db_parameter_group_family}'
+		description '${4:description}'
+		parameters '${5:parameters}'
+	end
+
+
+snippet aws_rds_subnet_group
+	aws_rds_subnet_group '${1:identifier or command}' do
+		name '${2:name}'
+		description '${3:description}'
+		subnets '${4:subnets}'
+	end
+
+
+snippet aws_route53_hosted_zone
+	aws_route53_hosted_zone '${1:identifier or command}' do
+		name '${2:name}'
+		comment '${3:comment}'
+		aws_route53_zone_id '${4:aws_route53_zone_id}'
+		defaults '${5:defaults}'
+	end
+
+
+snippet aws_route53_record_set
+	aws_route53_record_set '${1:identifier or command}' do
+		aws_route53_zone_id '${2:aws_route53_zone_id}'
+		rr_name '${3:rr_name}'
+		type '${4:type}'
+		ttl '${5:ttl}'
+		resource_records '${6:resource_records}'
+		aws_route53_zone_name '${7:aws_route53_zone_name}'
+		aws_route53_hosted_zone '${8:aws_route53_hosted_zone}'
+	end
+
+
+snippet aws_route_table
+	aws_route_table '${1:identifier or command}' do
+		name '${2:name}'
+		vpc '${3:vpc}'
+		virtual_private_gateways '${4:virtual_private_gateways}'
+		routes '${5:routes}'
+		ignore_route_targets '${6:ignore_route_targets}'
+		route_table_id '${7:route_table_id}'
+	end
+
+
+snippet aws_s3_bucket
+	aws_s3_bucket '${1:identifier or command}' do
+		name '${2:name}'
+		options '${3:options}'
+		enable_website_hosting '${4:enable_website_hosting}'
+		website_options '${5:website_options}'
+		recursive_delete '${6:recursive_delete}'
+	end
+
+
+snippet aws_security_group
+	aws_security_group '${1:identifier or command}' do
+		name '${2:name}'
+		vpc '${3:vpc}'
+		description '${4:description}'
+		inbound_rules '${5:inbound_rules}'
+		outbound_rules '${6:outbound_rules}'
+		security_group_id '${7:security_group_id}'
+	end
+
+
+snippet aws_server_certificate
+	aws_server_certificate '${1:identifier or command}' do
+		name '${2:name}'
+		certificate_body '${3:certificate_body}'
+		certificate_chain '${4:certificate_chain}'
+		private_key '${5:private_key}'
+	end
+
+
+snippet aws_sns_topic
+	aws_sns_topic '${1:identifier or command}' do
+		name '${2:name}'
+		arn '${3:arn}'
+	end
+
+
+snippet aws_sqs_queue
+	aws_sqs_queue '${1:identifier or command}' do
+		name '${2:name}'
+		options '${3:options}'
+	end
+
+
+snippet aws_subnet
+	aws_subnet '${1:identifier or command}' do
+		name '${2:name}'
+		vpc '${3:vpc}'
+		cidr_block '${4:cidr_block}'
+		availability_zone '${5:availability_zone}'
+		map_public_ip_on_launch '${6:map_public_ip_on_launch}'
+		route_table '${7:route_table}'
+		network_acl '${8:network_acl}'
+		subnet_id '${9:subnet_id}'
+	end
+
+
+snippet aws_vpc
+	aws_vpc '${1:identifier or command}' do
+		name '${2:name}'
+		cidr_block '${3:cidr_block}'
+		instance_tenancy '${4:instance_tenancy}'
+		internet_gateway '${5:internet_gateway}'
+		main_route_table '${6:main_route_table}'
+		main_routes '${7:main_routes}'
+		dhcp_options '${8:dhcp_options}'
+		enable_dns_support '${9:enable_dns_support}'
+		enable_dns_hostnames '${10:enable_dns_hostnames}'
+		vpc_id '${11:vpc_id}'
+	end
+
+
+snippet aws_vpc_peering_connection
+	aws_vpc_peering_connection '${1:identifier or command}' do
+		name '${2:name}'
+		vpc '${3:vpc}'
+		peer_vpc '${4:peer_vpc}'
+		peer_owner_id '${5:peer_owner_id}'
+		vpc_peering_connection_id '${6:vpc_peering_connection_id}'
+	end
+
