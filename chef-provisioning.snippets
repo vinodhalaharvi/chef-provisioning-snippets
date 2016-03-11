@@ -353,3 +353,71 @@ snippet aws_vpc_peering_connection
 		vpc_peering_connection_id '${6:vpc_peering_connection_id}'
 	end
 
+snippet load_balancer
+	load_balancer '${1:load_balancer}' do
+		driver	'${2:driver}'
+		chef_server	'${3:chef_server}'
+		load_balancer_options	'${4:load_balancer_options}'
+		name	'${5:name}'
+		machines	'${6:machines}'
+	end
+
+snippet machine
+	machine '${1:machine}' do
+		driver	'${2:driver}'
+		machine_options	'${3:machine_options}'
+		private_key_options	'${4:private_key_options}'
+		allow_overwrite_keys	'${5:allow_overwrite_keys}'
+		public_key_path	'${6:public_key_path}'
+		public_key_format	'${7:public_key_format}'
+		source_key	'${8:source_key}'
+		source_key_path	'${9:source_key_path}'
+		source_key_pass_phrase	'${10:source_key_pass_phrase}'
+		admin	'${11:admin}'
+		validator	'${12:validator}'
+		ohai_hints	'${13:ohai_hints}'
+		chef_config	'${14:chef_config}'
+		converge	'${15:converge}'
+		files	'${16:files}'
+		from_image	'${17:from_image}'
+	end
+
+snippet machine_batch
+	machine_batch '${1:machine_batch}' do
+		machines	'${2:machines}'
+		max_simultaneous	'${3:max_simultaneous}'
+		from_recipe	'${4:from_recipe}'
+		driver	'${5:driver}'
+		chef_server	'${6:chef_server}'
+		machine_options	'${7:machine_options}'
+		files	'${8:files}'
+	end
+
+
+snippet machine_execute
+	machine_execute '${1:machine_execute}' do
+		command	'${2:command}'
+		machine	'${3:machine}'
+		live_stream	'${4:live_stream}'
+		chef_server	'${5:chef_server}'
+		driver	'${6:driver}'
+	end
+
+snippet machine_file
+	machine_file '${1:machine_file}' do
+		path	'${2:path}'
+		machine	'${3:machine}'
+		local_path	'${4:local_path}'
+		content	'${5:content}'
+		owner	'${6:owner}'
+		group	'${7:group}'
+		mode	'${8:mode}'
+		chef_server	'${9:chef_server}'
+		driver	'${10:driver}'
+	end
+
+snippet machine_image
+	machine_image '${1:machine_image}' do
+		image_options	'${2:image_options}'
+	end
+
